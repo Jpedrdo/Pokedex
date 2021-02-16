@@ -2,7 +2,7 @@ import React from "react";
 import Pokedex from "./Pokedex";
 import Pokemon from "./Pokemon";
 import { Route, Switch } from "react-router-dom";
-import AppBarComponent from "./AppBar";
+import AppBarComponente from "./AppBarComponente";
 
 const App = () => (
   <Switch>
@@ -12,10 +12,7 @@ const App = () => (
       path="/:pokemonId"
       render={(props) => <Pokemon {...props} />}
     />
-    <Route 
-    exact 
-    path="/" 
-    render={(props) => <AppBarComponent {...props} />} />
+    <Route exact path="/" render={(props) => <AppBarComponente {...props} />} />
   </Switch>
 );
 

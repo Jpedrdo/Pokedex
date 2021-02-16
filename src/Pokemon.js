@@ -1,12 +1,11 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from "react";
 import { Typography, CircularProgress, Button, Box } from "@material-ui/core";
-import { toFirstCharUppercase } from "./constants";
+import { PrimeiraLetraMaiuscula } from "./PrimeiraLetraMaiuscula";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBarComponent from "./AppBar";
+import AppBarComponente from "./AppBarComponente";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   pokedexContainer: {
     paddingTop: "20px",
     paddingLeft: "50px",
@@ -70,75 +69,74 @@ const Pokemon = (props) => {
       });
   }, [pokemonId]);
 
-  const generatePokemonJSX = (pokemon) => {
+  const gerarPokemonJSX = (pokemon) => {
     const { name, id, species, height, weight, types } = pokemon;
     const fullImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
-    let peso = Number.parseFloat(weight);
     return (
-      <>
-        <Box className={classes.pokedexContainer}>
-          <Typography className={classes.textTitulo} variant="h1">
-            {toFirstCharUppercase(name)}
-          </Typography>
-          <img className={classes.imgPoke} src={fullImageUrl} />
-          <Typography className={classes.text} variant="h3">
-            Pokemon Infos
-          </Typography>
-          <Typography className={classes.text}>
-            {"Nome: "} {species.name}
-          </Typography>
-          <Typography className={classes.text}>Altura: {height}m </Typography>
-          <Typography className={classes.text}>Peso: {peso}kg </Typography>
-          {types.map((typeInfo) => {
-            const { type } = typeInfo;
-            const { name } = type;
-            return (
-              <Typography className={classes.text} key={name}>
-                {" "}
-                {`Tipo: ${name}`}
-              </Typography>
-            );
-          })}
-          <Box className={classes.butaoContainer}>
-            <Button
-              className={classes.butaoMain}
-              variant="outlined"
-              onClick={() => history.push("/")}
-            >
-              Voltar a Pokedex
-            </Button>
-          </Box>
+      <Box className={classes.pokedexContainer}>
+        <Typography className={classes.textTitulo} variant="h1">
+          {name}
+        </Typography>
+        <img
+          className={classes.imgPoke}
+          src={fullImageUrl}
+          alt="PokemonImage"
+        />
+        <Typography className={classes.text} variant="h3">
+          Pokemon Infos
+        </Typography>
+        <Typography className={classes.text}>
+          {"Nome: "} {PrimeiraLetraMaiuscula(species.name)}
+        </Typography>
+        <Typography className={classes.text}>Altura: {height}m </Typography>
+        <Typography className={classes.text}>Peso: {weight}kg </Typography>
+        {types.map((typeInfo) => {
+          const { type } = typeInfo;
+          const { name } = type;
+          return (
+            <Typography className={classes.text} key={name}>
+              {" "}
+              {`Tipo: ${PrimeiraLetraMaiuscula(name)}`}
+            </Typography>
+          );
+        })}
+        <Box className={classes.butaoContainer}>
+          <Button
+            className={classes.butaoMain}
+            variant="outlined"
+            onClick={() => history.push("/")}
+          >
+            Voltar a Pokedex
+          </Button>
         </Box>
-      </>
+      </Box>
     );
   };
 
   return (
-    <>
-      <AppBarComponent history={history} />
+    <Box>
+      <AppBarComponente history={history} />
       {pokemon === undefined && <CircularProgress />}
-      {pokemon !== undefined && pokemon && generatePokemonJSX(pokemon)}
+      {pokemon !== undefined && pokemon && gerarPokemonJSX(pokemon)}
       {pokemon === false && (
-        <>
-          <Box className={classes.pokedexContainer}>
-            <Box className={classes.error}>
-              <Typography className={classes.errorText}>
-                [ERROR] Pokemon não encontrado!
-              </Typography>
-              <Box className={classes.butaoContainer}>
-                <Button
-                  className={classes.butaoMain}
-                  variant="outlined"
-                  onClick={() => history.push("/")}
-                >
-                  Voltar a Pokedex
-                </Button>
-              </Box>
+        <Box className={classes.pokedexContainer}>
+          <Box className={classes.error}>
+            <Typography className={classes.errorText}>
+              [ERRO] Pokemon não encontrado!
+            </Typography>
+            <Box className={classes.butaoContainer}>
+              <Button
+                className={classes.butaoMain}
+                variant="outlined"
+                onClick={() => history.push("/")}
+              >
+                Voltar a Pokedex
+              </Button>
             </Box>
           </Box>
-        </>
+        </Box>
       )}
-    </>
+    </Box>
   );
 };
 

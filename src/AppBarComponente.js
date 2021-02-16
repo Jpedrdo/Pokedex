@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AppBarComponent = (props) => {
+const AppBarComponente = (props) => {
   const classes = useStyles();
   const { history } = props;
 
@@ -102,4 +102,4 @@ const AppBarComponent = (props) => {
   );
 };
 
-export default AppBarComponent;
+export default AppBarComponente;

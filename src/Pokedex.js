@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  Box,
   Grid,
   Card,
   CardMedia,
@@ -7,10 +8,10 @@ import {
   Typography,
   CircularProgress,
 } from "@material-ui/core";
-import { toFirstCharUppercase } from "./constants";
+import { PrimeiraLetraMaiuscula } from "./PrimeiraLetraMaiuscula";
 import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
-import AppBarComponent from "./AppBar";
+import AppBarComponente from "./AppBarComponente";
 
 const useStyles = makeStyles((theme) => ({
   pokedexContainer: {
@@ -76,7 +77,7 @@ const Pokedex = (props) => {
         <Card className={classes.cards} onClick={() => history.push(`/${id}`)}>
           <CardMedia className={classes.cardMedia} image={sprite} />
           <CardContent className={classes.cardContent}>
-            <Typography>{`${id}. ${toFirstCharUppercase(name)}`}</Typography>
+            <Typography>{`${id}. ${PrimeiraLetraMaiuscula(name)}`}</Typography>
           </CardContent>
         </Card>
       </Grid>
@@ -84,8 +85,8 @@ const Pokedex = (props) => {
   };
 
   return (
-    <>
-      <AppBarComponent
+    <Box>
+      <AppBarComponente
         handleSearchChange={handleSearchChange}
         history={history}
       />
@@ -100,7 +101,7 @@ const Pokedex = (props) => {
       ) : (
         <CircularProgress />
       )}
-    </>
+    </Box>
   );
 };
 
