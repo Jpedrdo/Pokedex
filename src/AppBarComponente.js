@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Toolbar, AppBar } from "@material-ui/core";
+import { Typography, Box, Toolbar, AppBar } from "@material-ui/core";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -15,11 +15,13 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     cursor: "pointer",
-    flexGrow: 1,
     display: "none",
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },
+  },
+  placeHolderFlex: {
+    flexGrow: 1,
   },
   search: {
     position: "relative",
@@ -85,7 +87,8 @@ const AppBarComponente = (props) => {
         >
           Pokedex
         </Typography>
-        <div className={classes.search}>
+        <Box className={classes.placeHolderFlex}></Box>
+        <Box className={classes.search}>
           <SearchIcon className={classes.searchIcon} />
           <InputBase
             onChange={props.handleSearchChange}
@@ -96,7 +99,7 @@ const AppBarComponente = (props) => {
             }}
             inputProps={{ "aria-label": "search" }}
           />
-        </div>
+        </Box>
       </Toolbar>
     </AppBar>
   );
