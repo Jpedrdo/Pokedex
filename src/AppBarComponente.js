@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 const AppBarComponente = (props) => {
   const classes = useStyles();
-  const { history } = props;
+  const { history, handleSearchChange } = props;
 
   return (
     <AppBar className={classes.AppBar} position="fixed">
@@ -91,7 +91,7 @@ const AppBarComponente = (props) => {
         <Box className={classes.search}>
           <SearchIcon className={classes.searchIcon} />
           <InputBase
-            onChange={props.handleSearchChange}
+            onChange={handleSearchChange}
             placeholder="Pokemon (Pesquisar tudo em minúsculo)"
             classes={{
               root: classes.inputRoot,
