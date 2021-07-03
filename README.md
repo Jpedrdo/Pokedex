@@ -1,8 +1,8 @@
 # Pokédex
- Pokédex com React JS e Material-UI. Possui um catálogo de 807 pokemons, pegos da PokéAPI. \
- Todos possuem uma página individual, que mostra mais informações sobre eles. \
- Também há uma aba de busca, para filtrar os pokémons conforme o digitado. \
- Divirta-se :)
+ Pokédex with React JS and Material-UI. It has a catalog of 807 pokemons, taken from the PokéAPI. \
+ All have an individual page, which shows more information about them. \
+ There is also a search tab, to filter the Pokemons as typed. \
+ Have a good time :)
 
 # Getting Started with Create React App
 
