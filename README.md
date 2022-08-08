@@ -1,19 +1,20 @@
-<h1 align="center">Pokedex</h1>
+<h1 align="center">Pokédex</h1>
 
 <img src="src/imgs/fullPage.png">
 
-<h3 align="center">A list of the 151 classic pokemons.
-Clicking on one of them you will be able to check his stats and abilities in a Pokedex display.
-There's also a input on appbar, to filter the Pokemons as typed.
+<h3 align="center">A list of the 151 classic Pokémons.
+Clicking on one of them you will be able to check his stats and abilities in a Pokédex display.
+There's also a input on appbar, to filter the Pokémons as typed.
 </h3>
 
 <img src="src/imgs/pokedexDialog.png">
 
 ## ⚙️ Technologies
 
--   [ ] Javascript
--   [ ] React Js
--   [ ] Mui Ui
+- [ ] Javascript
+- [ ] React Js
+- [ ] Mui Ui
+- [ ] PokéApi
 
 # Getting Started with Create React App
 
