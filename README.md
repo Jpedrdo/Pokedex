@@ -2,7 +2,7 @@
 
 <img src="src/imgs/fullPage.png">
 
-<h3 align="center">A list of the 151 classic pokemons.
+<h3 align="center">A list of the 151 classic Pokemons.
 Clicking on one of them you will be able to check his stats and abilities in a Pokedex display.
 There's also a input on appbar, to filter the Pokemons as typed.
 </h3>
