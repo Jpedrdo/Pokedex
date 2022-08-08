@@ -1,6 +1,6 @@
 <h1 align="center">Pokedex</h1>
 
-<img src="../Pokedex/src/imgs/fullPage.png">
+<img src="src/imgs/fullPage.png">
 
 <h3 align="center">A list of the 151 classic pokemons.
 Clicking on one of them you will be able to check his stats and abilities in a Pokedex display.
