@@ -14,6 +14,7 @@ There's also a input on appbar, to filter the Pokémons as typed.
 - [ ] Javascript
 - [ ] React Js
 - [ ] Mui Ui
+- [ ] Axios
 - [ ] PokéApi
 
 # Getting Started with Create React App
