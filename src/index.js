@@ -1,19 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { Router } from "react-router-dom";
-import { createBrowserHistory } from "history";
 
-const history = createBrowserHistory;
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Router history={history()}>
-      <App />
-    </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-
-reportWebVitals();
+root.render(<App />);

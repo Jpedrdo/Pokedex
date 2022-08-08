@@ -1,17 +1,14 @@
 import React from "react";
-import Pokedex from "./Pokedex";
-import Pokemon from "./Pokemon";
-import { Route, Switch } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./theme";
+import GlobalStyles from "./components/GlobalStyles";
+import MainLayout from "./layouts";
 
 const App = () => (
-  <Switch>
-    <Route exact path="/" render={(props) => <Pokedex {...props} />} />
-    <Route
-      exact
-      path="/:pokemonId"
-      render={(props) => <Pokemon {...props} />}
-    />
-  </Switch>
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    <MainLayout />
+  </ThemeProvider>
 );
 
 export default App;
