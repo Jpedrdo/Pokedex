@@ -1,13 +1,13 @@
 <h1 align="center">Pokedex</h1>
 
-<img src="../src/readMeImgs/fullPage.png">
+<img src="../Pokedex/src/imgs/fullPage.png">
 
 <h3 align="center">A list of the 151 classic pokemons.
 Clicking on one of them you will be able to check his stats and abilities in a Pokedex display.
 There's also a input on appbar, to filter the Pokemons as typed.
 </h3>
 
-<img src="src/readMeImgs/pokedex.png">
+<img src="src/imgs/pokedexDialog.png">
 
 ## ⚙️ Technologies
 
